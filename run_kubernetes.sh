@@ -9,15 +9,13 @@ dockerpath=kumatrx/app
 
 # Step 2
 # Run the Docker Hub container with kubernetes
-kubectl run ml-app-pod\
-    --generator=run-pod/v1\
-    --image=$dockerpath\
-    --port=80 --labels app=ml-app-pod
+kubectl run kumatrxmicroservice --image=$dockerpath --port=80
 
 # Step 3:
 kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
-kubectl port-forward ml-app-pod 8000:80
+kubectl port-forward kumatrxmicroservice 8000:80
+
 

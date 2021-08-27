@@ -1,1 +1,12 @@
 <paste log output from Kubernetes-mediated prediction, here>
+Dockerfile  Makefile  minikube-linux-amd64  output_txt_files  requirements.txt  run_kubernetes.sh
+(.devops) ec2-user:~/environment/project-ml-microservice-kubernetes (master) $ ./run_kubernetes.sh
+pod/kumatrxmicroservice created
+NAME                  READY   STATUS              RESTARTS   AGE
+kumatrxmicroservice   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) ec2-user:~/environment/project-ml-microservice-kubernetes (master) $ ./run_kubernetes.sh
+Error from server (AlreadyExists): pods "kumatrxmicroservice" already exists
+NAME                  READY   STATUS    RESTARTS   AGE
+kumatrxmicroservice   1/1     Running   0          56s
+Forwarding from [::1]:8000 -> 80
