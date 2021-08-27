@@ -30,30 +30,23 @@ Make sure to `$ cd project-ml-microservice-kubernetes` in terminal to access all
 `source ~/.devops/bin/activate`
 * Run `make install` to install the necessary dependencies
 
-* To install Hadolint use following command depending on the choice of OS:
+* install Hadolint using following command:
+`sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64`
+`sudo chmod +x /bin/hadolint`
 
-    * For MAC: `brew install hadolint`
-    * For Windows: `scoop install hadolint` (Need to install scoop before using this command)
+* install Hadolint using following command:
+`sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.16.3/hadolint-Linux-x86_64`
+`sudo chmod +x /bin/hadolint`
 
-Dockers, virtual box and minikube must be installed in order to run application. 
+* install Minikube using following command:
+`curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64`
+`sudo install minikube-linux-amd64 /bin/minikube`
+`sudo chmod +x /bin/minikube`
 
-### Special Instructions For Windows 10 Pro Users:
-
-Windows provide a hyperV setup instead of virtualbox. This hyperV supports linux subsystems and Docker VM. But to run minikube on hyperV must follow these steps:
-
-1. Open hyper-V manager and click on Virtual Switch Manager (right menu)
-2. Create new Virtual Network Switch (external) with a name `Primary Network Switch`.
-3. Click on this newly created switch and select your wifi as external network.
-4. Restart your computer and install minikube using following command:
-    * `choco install minikube`
-    * `choco install kubernetes-cli`
-    * Finally run the command that will launch minikube on hyperV
-        `minikube start --vm-driver hyperv --hyperv-virtual-switch "Primary Virtual Switch"`
-5. In windows, a linux subsystem (ubuntu) can be installed from Microsoft Store.
-6. In order to connect to docker for Windows, just enable "Expose daemon on tcp://localhost:2375 without TLS in docker settings".
-7. Set enviroment variable in linux subsystem by executing this command in linux subsystem terminal
-    `echo "export DOCKER_HOST=localhost:2375" >> ~/.bash_profile` (or a '.bashrc') file.
-8. In order to test it run `docker images` to verify if it is configured properly.
+* install Kubectl using following command:
+`curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
+`sudo install kubectl /bin/kubectl`
+`sudo chmod +x /bin/kubectl`
 
 ### Running `app.py`
 
