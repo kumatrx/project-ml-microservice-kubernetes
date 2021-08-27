@@ -73,7 +73,7 @@ Script files are provided with the code with the extension '.sh'.
    * Install a virtual machine like VirtualBox and minikube
    * Start a local cluster: minikube start
 * Create Flask app in Container
-   * Build image and add a descriptive tag: docker build --tag=ml-api .
+   * Build image and add a descriptive tag: docker build --tag=app .
    * Upload docker image: ./upload_docker.sh where your docker id should be used
 * Run via kubectl
    * Run in Kubernetes: ./run_kubernetes.sh where dockerpath should be same name as defined above
