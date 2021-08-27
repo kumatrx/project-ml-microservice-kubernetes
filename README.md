@@ -66,6 +66,19 @@ Script files are provided with the code with the extension '.sh'.
 4. There is a folder named '.circleci' that includes a config.yml file. In case if you have plan to push the repo to github. Just add the repo in circleci account and look at the final tests if they pass or fail. 
 5. You can see a badge in the top in README file that show `PASSED` in green color to confirm the successfull execution.
 
+### Kubernetes Steps
+* Setup and Configure Docker locally
+   * Install docker and create docker hub account
+* Setup and Configure Kubernetes locally
+   * Install a virtual machine like VirtualBox and minikube
+   * Start a local cluster: minikube start
+* Create Flask app in Container
+   * Build image and add a descriptive tag: docker build --tag=ml-api .
+   * Upload docker image: ./upload_docker.sh where your docker id should be used
+* Run via kubectl
+   * Run in Kubernetes: ./run_kubernetes.sh where dockerpath should be same name as defined above
+   * Make prediction using second terminal: make_prediction.sh
+
 ## Author
 
 * Tarun Kumar <br />
